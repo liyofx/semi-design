@@ -1,8 +1,8 @@
 import {
     toDate,
     format as dateFnsFormat,
-    utcToZonedTime as dateFnsUtcToZonedTime,
-    zonedTimeToUtc as dateFnsZonedTimeToUtc,
+    toZonedTime as dateFnsUtcToZonedTime,
+    toDate as dateFnsZonedTimeToUtc,
     OptionsWithTZ
 } from 'date-fns-tz';
 import { parse as dateFnsParse } from 'date-fns';
@@ -196,7 +196,7 @@ const utcToZonedTime = (date: string | number | Date, timeZone: string | number,
  * 
  * @see https://github.com/marnusw/date-fns-tz#zonedtimetoutc
  */
-const zonedTimeToUtc = (date: string | number | Date, timeZone: string | number, options?: OptionsWithTZ) => dateFnsZonedTimeToUtc(date, toIANA(timeZone), options);
+const zonedTimeToUtc = (date: string | number | Date, timeZone: string | number, options?: OptionsWithTZ) => dateFnsZonedTimeToUtc(date, { ...options, timeZone: toIANA(timeZone) });
 
 /**
  * return current system hour offset based on utc:

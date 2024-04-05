@@ -205,7 +205,7 @@ class OverflowList extends BaseComponent<OverflowListProps, OverflowListState> {
     };
 
     mergeRef = (ref: RefCallback<any> | MutableRefObject<any> | null, node: Element, key: Key): void => {
-        this.itemRefs[key] = node;
+        this.itemRefs[typeof key == 'bigint' ? key.toString(): key] = node;
         if (typeof ref === 'function') {
             ref(node);
         } else if (typeof ref === 'object' && ref && 'current' in ref) {
@@ -223,7 +223,7 @@ class OverflowList extends BaseComponent<OverflowListProps, OverflowListState> {
         if (isFunction(itemKey)) {
             return itemKey(item);
         }
-        return get(item, itemKey || 'key', defaultKey);
+        return get(item, typeof itemKey == 'bigint' ? itemKey.toString() : itemKey || 'key', defaultKey);
     }
 
     renderItemList = () => {

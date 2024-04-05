@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 import { clear } from 'jest-date-mock';
 import { addDays, startOfWeek, endOfWeek, add, format, addWeeks, set } from 'date-fns';
 import { zhCN, enUS } from "date-fns/locale";
-import { zonedTimeToUtc } from 'date-fns-tz';
+import {  toDate as zonedTimeToUtc } from 'date-fns-tz';
 import { strings } from '../../../semi-foundation/datePicker/constants';
 import { BASE_CLASS_PREFIX } from '../../../semi-foundation/base/constants';
 import en_US from '../../locale/source/en_US';

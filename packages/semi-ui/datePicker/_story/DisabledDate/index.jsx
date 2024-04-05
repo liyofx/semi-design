@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { DatePicker, ConfigProvider, Select } from '@douyinfe/semi-ui';
 import * as _ from 'lodash';
 import * as dateFns from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
+import { toZonedTime as utcToZonedTime } from 'date-fns-tz';
 
 const { Option } = Select;
 

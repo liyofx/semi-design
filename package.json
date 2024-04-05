@@ -4,7 +4,7 @@
     "description": "Semi monorepo main project",
     "author": "",
     "workspaces": [
-        "packages/**"
+        "packages/*"
     ],
     "private": true,
     "scripts": {
@@ -65,7 +65,7 @@
         "cross-env": "^5.2.1",
         "css": "^2.2.4",
         "cypress-real-events": "^1.8.1",
-        "date-fns": "^2.23.0",
+        "date-fns": "^3.6.0",
         "debug": "^4.3.2",
         "execa": "5",
         "fast-xml-parser": "^4.2.7",
