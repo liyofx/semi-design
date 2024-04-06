@@ -17,7 +17,7 @@ export function compatibleParse(
     if (value) {
         if (formatToken) {
             baseDate = baseDate || new Date();
-            result = parse(value, formatToken, baseDate, { locale });
+            result = parse(value, String(formatToken), baseDate, { locale });
         }
         if (!isValid(result)) {
             result = parseISO(value);
